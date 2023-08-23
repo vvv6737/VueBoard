@@ -1,21 +1,37 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import BoardList from '@/components/BoardList'
-import BoardDetail from '@/components/BoardDetail'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/Home.vue'
+import Profile from '../views/Profile.vue'
+import BoardList from '../views/board/List.vue'
 
-Vue.use(Router)
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/board/list',
+    name: 'boardList',
+    component: BoardList
+  },
+]
 
-export default new Router({
-    routes : [
-        {
-            path : '/',
-            name : '리스트',
-            component : BoardList
-        },
-        {
-            path : '/detail',
-            name : '상세보기',
-            component : BoardDetail
-        },
-    ]
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 })
+
+export default router
