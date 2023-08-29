@@ -9,13 +9,13 @@
 export default {
 	methods:{
 		getList() {
-			this.$axios.get("https://localhost:7777/reply/list?boardSeq=11")
-			.then((res)=>{
-				console.log(res);
-			})
-			.then((err)=>{
-				console.log(err);
-			})
+			// this.$axios.get("https://localhost:7777/reply/list?boardSeq=11")
+			// .then((res)=>{
+			// 	console.log(res);
+			// })
+			// .then((err)=>{
+			// 	console.log(err);
+			// })
 		}
 	}
 }
