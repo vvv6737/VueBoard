@@ -20,5 +20,18 @@ npm run build
 npm run lint
 ```
 
+### 안되면~
+```
+npm run lint
+```
+->
+```
+npm install
+```
+->
+```
+npm run serve
+```
+
 ## 앞으로 할일
 swagger를 통하여 api만 담긴 스프링 컨테이너 개발 후 해당 api를 사용할 예정
