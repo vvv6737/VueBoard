@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios';
+import './assets/common.css'
+
 
 // [axios / http 통신]
 // app.config.globalProperties.$axios = axios; 
@@ -13,6 +15,7 @@ import axios from 'axios';
 const app = createApp(App)
 // [axios / http 통신]
 app.config.globalProperties.$axios = axios
+app.config.globalProperties.$serverUrl = '//localhost:9999' //api server
 // [라우터 사용 설정]
 app.use(router)
 // [main 아이디 : 렌더링 시작점]
