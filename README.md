@@ -22,7 +22,7 @@ npm run lint
 
 ### 안되면~
 ```
-npm run lint
+rm -rf node_modules
 ```
 ->
 ```
