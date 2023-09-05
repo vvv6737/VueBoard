@@ -48,15 +48,15 @@
 
 		<div>
 			<select v-model="searchKey">
-				<option value="">- 선택 -</option>
+				<option value="0">- 선택 -</option>
 				<option value="1">작성자</option>
 				<option value="2">제목</option>
 				<option value="3">내용</option>
 			</select>
 			&nbsp;
-			<input type="text" v-model="searchValue" @keyup.enter="fnPage()">
+			<input type="text" v-model="searchValue" @keyup.enter="fnPage(1)">
 			&nbsp;
-			<button @click="fnPage()">검색</button>
+			<button @click="fnPage(1)">검색</button>
 		</div>
 	</div>
 </template>
@@ -83,7 +83,7 @@ export default {
 			}, //페이징 데이터
 			page: this.$route.query.page ? this.$route.query.page : 1,
 			size: this.$route.query.size ? this.$route.query.size : 10,
-			searchKey: this.$route.query.sk ? this.$route.query.sk : '',
+			searchKey: this.$route.query.sk ? this.$route.query.sk : '0',
       		searchValue: this.$route.query.sv ? this.$route.query.sv : '',
 			keyword: this.$route.query.keyword,
 			paginavigation: function () { //페이징 처리 for문 커스텀
@@ -112,8 +112,8 @@ export default {
 		fnGetList() {
 			this.requestBody = { // 데이터 전송
 				// keyword: this.keyword,
-				sk: this.search_key,
-				sv: this.search_value,
+				sk: this.searchKey,
+				sv: this.searchValue,
 				page: this.page,
 				pageSize: this.size
 			}
@@ -123,7 +123,6 @@ export default {
 				headers: {}
 
 			}).then((res) => {
-				console.log(res.data);
 				this.list = res.data.resList;
 				this.paging = res.data.pagination;
 				this.paging.totalListCnt = res.data.totalCount;
@@ -153,7 +152,6 @@ export default {
 			if (this.page !== n) {
 				this.page = n
 			}
-			console.log(this)
 			this.fnGetList()
 		}
 	}
