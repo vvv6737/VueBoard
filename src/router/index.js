@@ -4,6 +4,7 @@ import Profile from '../views/Profile.vue'
 import BoardList from '../views/board/List.vue'
 import BoardDetail from '../views/board/Detail.vue'
 import BoardWrite from '../views/board/Write.vue'
+import Login from "@/views/common/Login"
 
 
 const routes = [
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login  //로그인 컴포넌트 추가
   },
   {
     path: '/about',

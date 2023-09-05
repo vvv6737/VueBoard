@@ -6,6 +6,7 @@
 				<li><router-link to="/about">about</router-link></li>
 				<li><router-link to="/board/list">게시판</router-link></li>
 				<li><router-link to="/profile">내 프로필</router-link></li>
+				<li><router-link to="/login">로그인</router-link></li>
 			</ul>
 		</div>
 	</header>
