@@ -68,7 +68,7 @@ export default {
             let apiUrl = this.$serverUrl + '/board'
             this.form = {
                 "boardSeq": this.idx,
-                "userSeq": 1,
+                "userSeq": 1, // 아직 로그인 로직없어서 1로 고정
                 "title": this.title,
                 "contents": this.contents,
             }

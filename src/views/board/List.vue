@@ -48,7 +48,7 @@
 
 		<div>
 			<select v-model="searchKey">
-				<option value="0">- 선택 -</option>
+				<option value="0">제목 + 내용</option>
 				<option value="1">작성자</option>
 				<option value="2">제목</option>
 				<option value="3">내용</option>
